@@ -10,6 +10,7 @@ body {
     flex-direction: column;
     height: 100vh;
     justify-content: space-around;
+    background-color: black;
 }
 
 #banco {
@@ -21,7 +22,6 @@ body {
 #banco-clicks {
     min-height: 130px;
     border-radius: 20px;
-    background-color: black;
 }
 
 #banco-clicks h3 {
@@ -31,6 +31,7 @@ body {
 h1 {
     padding: 10px;
     font-size: 40px;
+    color: white;
 }
 h2{
     font-size: 15px;
@@ -54,7 +55,7 @@ h3 {
     box-shadow: 14px 17px 18px 5px rgba(79, 6, 20, 0.68);
     color: rgb(238, 55, 55);
     font-weight: bold;
-    background-color:black
+    background-color:white
 }
 
 #objetos-tienda {
@@ -90,7 +91,6 @@ h3 {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    background-color: black;
 }
 
 button:hover{
@@ -98,7 +98,6 @@ button:hover{
 }
 
 #suma-multiplicador{
-    background-color: black;
     color: white;
     border-radius: 20px;
     gap: 10px;
