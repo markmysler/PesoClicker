@@ -26,9 +26,9 @@ class Objeto{
         this.comprados = comprados
     }
 }
-const masUnClick = new Objeto('+1 Peso por click','masUnClick', 10, '+', 1)
-const masCincoClicks = new Objeto('+5 Pesos por click', 'masCincoClicks', 250, '+', 5)
-const masDiezClicks = new Objeto('+10 Pesos por click', 'masDiezClicks', 1500, '+', 10)
+const masUnClick = new Objeto('Ingresos por click +1','masUnClick', 10, '+', 1)
+const masCincoClicks = new Objeto('Ingresos por click +5', 'masCincoClicks', 250, '+', 5)
+const masDiezClicks = new Objeto('Ingresos por click +10', 'masDiezClicks', 1500, '+', 10)
 const multiplicadorMas20 = new Objeto('Multiplicador +0.2','multiplicadorMas20', 1000, '*', 0.2)
 const multiplicadorMas100 = new Objeto('Multiplicador +1','multiplicadorMas100', 10000, '*', 1)
 const multiplicadorMas200 = new Objeto('Multiplicador +2','multiplicadorMas200', 300000, '*', 2)
@@ -73,15 +73,15 @@ function comprarObjetoTienda(obj){
     valorPlusClick = Math.round(suma * multiplicadorPorClick)
     obj.comprados++
     btnPlusClick.innerHTML = `
-    +$${valorPlusClick} p/click
+    +$${valorPlusClick}
     `
     banco = banco - obj.precio
     divBanco.innerHTML = `$${Math.round(banco)}`
     obj.precio += Math.round(obj.precio*obj.relacionPrecio+valorPlusClick*obj.relacionPrecio+clicksPorSegundo*10) 
-    spanNumeroSuma.innerHTML = suma
-    spanNumeroMultiplicador.innerHTML = multiplicadorPorClick.toFixed(1)
+    spanNumeroSuma.innerHTML = `$${suma}`
+    spanNumeroMultiplicador.innerHTML = `x${multiplicadorPorClick.toFixed(1)}`
     spanNumeroCPS.innerHTML = clicksPorSegundo.toFixed(1)
-    spanNumeroPesosPorSegundo.innerHTML = Math.round(valorPlusClick*clicksPorSegundo)
+    spanNumeroPesosPorSegundo.innerHTML = `$${Math.round(valorPlusClick*clicksPorSegundo)}` 
     if (clicksPorSegundo > 0){
         let intervalID = window.setInterval(CPS, 1000);
     }
@@ -97,7 +97,7 @@ function CPS(){
 }
 function revisarVictoria(){
     if (banco >= 100000000) {
-        alert('Ganaste')
+        alert('Ganaste!')
         window.location.href=window.location.href
     }else{
         return
@@ -113,7 +113,9 @@ function desactivarActivarTienda(){
     
     for (let i = 0; i < spanPrecio.length; i++) {
             if (banco >= spanPrecio[i].innerHTML) {
-                botonesObjetoTienda[i].disabled = false
+                botonesObjetoTienda[i].disabled = false;
+                botonesObjetoTienda[i].setAttribute("color", "green")
+                
             } else {
                 botonesObjetoTienda[i].disabled = true
             }

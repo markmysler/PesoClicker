@@ -8,9 +8,22 @@
 body {
     display: flex;
     flex-direction: column;
+    align-items: center;
     height: 100vh;
     justify-content: space-around;
-    background-color: black;
+}
+
+.dashboard {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 80vw;
+}
+
+.caja-izquierda {
+    border: 1px solid black;
+    border-radius: 20px;
+    padding: 2%;
 }
 
 #banco {
@@ -31,17 +44,18 @@ body {
 h1 {
     padding: 10px;
     font-size: 40px;
-    color: white;
 }
-h2{
+
+h2 {
     font-size: 15px;
     padding-bottom: 1%;
     color: green;
     font-weight: bold;
 }
+
 h3 {
     font-size: 30px;
-    color: white;
+
 }
 
 #plus-click {
@@ -50,12 +64,8 @@ h3 {
     border-radius: 30px;
     margin: 10px;
     font-size: 20px;
-    -webkit-box-shadow: 14px 17px 18px 5px rgba(79, 6, 20, 0.68);
-    -moz-box-shadow: 14px 17px 18px 5px rgba(79, 6, 20, 0.68);
-    box-shadow: 14px 17px 18px 5px rgba(79, 6, 20, 0.68);
-    color: rgb(238, 55, 55);
+    color: green;
     font-weight: bold;
-    background-color:white
 }
 
 #objetos-tienda {
@@ -77,30 +87,70 @@ h3 {
     box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
 
 }
-.objeto-tienda h4{
+
+.objeto-tienda h4 {
     color: rgb(238, 55, 55);
     font-size: 2vh;
 }
-.objeto-tienda p{
+
+.objeto-tienda p {
     color: green;
     font-weight: bold;
 }
+
 #tienda {
     height: 40vh;
+    width: 80vw;
     border-radius: 20px;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
+    border: 1px solid black;
+    border-radius: 20px;
+    padding: 1%;
 }
 
-button:hover{
+button:hover {
     border: 1px solid yellow;
 }
 
-#suma-multiplicador{
-    color: white;
+#suma-multiplicador {
     border-radius: 20px;
     gap: 10px;
     padding: 10px 0px;
     font-weight: bold;
+}
+
+@media only screen and (max-width: 550px) {
+    h3 {
+        font-size: 20px;
+    }
+
+    #suma-multiplicador p {
+        font-size: 14px;
+        padding: 2%;
+    }
+
+    #plus-click {
+        min-height: 120px;
+        min-width: 120px;
+        font-size: 26px;
+    }
+    .dashboard {
+        width: 90vw;
+    }
+}
+@media only screen and (max-width: 370px) {
+    .objeto-tienda h4{
+        font-size: 15px;
+    }
+    #banco{
+        font-size: 30px;
+    }
+    #banco-clicks h3 {
+        padding: 10px 0px;
+    }
+    #banco-clicks{
+        min-height: 100px;
+    }
 }
